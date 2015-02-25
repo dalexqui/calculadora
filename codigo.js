@@ -13,7 +13,7 @@ for (i=0; i<n.value.length; i++)
 	   {
 	   i++;
 	   num2 = s.substring(i,i+1);
-       resul = (parseInt(num1)+parseInt(num2));
+       resul = (parseInt(resul) + parseInt(num2));
 	   
 	   }
 	else if(valor == '-')
@@ -24,6 +24,7 @@ for (i=0; i<n.value.length; i++)
 	   }
 	   else{
 		   num1 += valor;
+		   resul = num1;
 	   }
 }
   n.value = resul;
