@@ -22,6 +22,21 @@ for (i=0; i<n.value.length; i++)
 	   num2 = s.substring(i,i+1);
        resul -= parseInt(num2);
 	   }
+	   
+	  else if(valor == '*')
+	   {
+	   i++;
+	   num2 = s.substring(i,i+1);
+       resul = (parseInt(resul) * parseInt(num2));
+	   }
+	   
+	 else if(valor == '/')
+	   {
+	   i++;
+	   num2 = s.substring(i,i+1);
+       resul = (parseInt(resul) / parseInt(num2));
+	   }	   
+	   
 	   else{
 		   num1 += valor;
 		   resul = num1;
