@@ -12,7 +12,7 @@
 <!--<form method="post" name="formu" id="formu" onsubmit="return operar()">!-->
 <div align="center">
 
-<input type="text" id="lcd" class="nameField" value="" onkeyup="" >
+<input type="text" id="lcd" class="nameField" value="" onkeyup="" disabled="true">
 
     <br />
     
@@ -36,7 +36,7 @@
    <input type="button" class="button white" onclick="cambiar('-')" value="-" >
  <input type="button" class="button white" onclick="cambiar('*')" value="*" >
  <input type="button" class="button white" onclick="cambiar('/')" value="/" >
-  <input type="button" class="button white" onclick="cambiar('(')" value="(" >
+  <input type="button" class="button white" onclick="cambiar('(')" value="("  >
     <input type="button" class="button white" onclick="cambiar(')')" value=")" >
     
     <input type="button" class="button white" onclick="ce()" value="CE" >
@@ -47,9 +47,9 @@
   <br />
   
   
-  <a class="button white" href="#">SEN X</a>
-  <a class="button white" href="#">COS X</a>
-  <a class="button white" href="#">TAN X</a>
+  <input type="button" class="button white" onclick="funciones(0)" value="SEN X" >
+  <input type="button" class="button white" onclick="funciones(1)" value="COS X" >
+  <input type="button" class="button white" onclick="funciones(2)" value="TAN X" >
   <br />
   <br />
   
