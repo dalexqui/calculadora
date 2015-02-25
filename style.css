@@ -20,6 +20,7 @@
   background: ms-linear-gradient(top,  #f9f9f9, #f0f0f0);
   background: linear-gradient(top,  #f9f9f9, #f0f0f0);
   filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#f0f0f0');
+  cursor:pointer;
 }
 
 .button.white:hover{
@@ -38,7 +39,7 @@
 .nameField {
 top: 44px;
 height: 22px;
-background-image: url('file:///C|/Users/Ingenieria/Desktop/name_bkg.jpg');
+background-image: url('name_bkg.jpg');
 }
 @charset "utf-8";
 /* CSS Document */

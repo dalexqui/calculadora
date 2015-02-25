@@ -3,37 +3,44 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Documento sin t&iacute;tulo</title>
-<link href="file:///C|/Users/Ingenieria/Desktop/style.css" rel="stylesheet" type="text/css">
+<link href="style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="codigo.js"></script>
+
 </head>
 
 <body>
-
+<!--<form method="post" name="formu" id="formu" onsubmit="return operar()">!-->
 <div align="center">
 
-
-<input type="text" id="nameField" class="nameField">
+<input type="text" id="lcd" class="nameField" value="" onkeyup="" >
 
     <br />
+    
   <br />
   
-  <a class="button white" href="#">0</a>
-  <a class="button white" href="#">1</a>
-  <a class="button white" href="#">2</a>
-  <a class="button white" href="#">3</a>
-  <a class="button white" href="#">4</a>
-  <a class="button white" href="#">5</a>
-  <a class="button white" href="#">6</a>
-  <a class="button white" href="#">7</a>
-  <a class="button white" href="#">8</a>
-  <a class="button white" href="#">9</a>
+  <input type="button" class="button white" onclick="cambiar(0)" value="0" >
+  <input type="button" class="button white" onclick="cambiar(1)" value="1" >
+ <input type="button" class="button white" onclick="cambiar(2)" value="2" >
+   <input type="button" class="button white" onclick="cambiar(3)" value="3" >
+ <input type="button" class="button white" onclick="cambiar(4)" value="4" >
+ <input type="button" class="button white" onclick="cambiar(5)" value="5" >
+ <input type="button" class="button white" onclick="cambiar(6)" value="6" >
+ <input type="button" class="button white" onclick="cambiar(7)" value="7" >
+ <input type="button" class="button white" onclick="cambiar(8)" value="8" >
+ <input type="button" class="button white" onclick="cambiar(9)" value="9" >
   
   <br />
   <br />
   
-  <a class="button white" href="#">+</a>
-  <a class="button white" href="#">-</a>
-  <a class="button white" href="#">*</a>
-  <a class="button white" href="#">/</a>
+   <input type="button" class="button white" onclick="cambiar('+')" value="+" >
+   <input type="button" class="button white" onclick="cambiar('-')" value="-" >
+ <input type="button" class="button white" onclick="cambiar('*')" value="*" >
+ <input type="button" class="button white" onclick="cambiar('/')" value="/" >
+  <input type="button" class="button white" onclick="cambiar('(')" value="(" >
+    <input type="button" class="button white" onclick="cambiar(')')" value=")" >
+    
+    <input type="button" class="button white" onclick="ce()" value="CE" >
+        <input type="button" class="button white" onclick="c()" value="C" >
   <a class="button white" href="#">RAIZ</a>
   <a class="button white" href="#">POTENCIA</a>
   <br />
@@ -46,10 +53,9 @@
   <br />
   <br />
   
-  <a class="button white" href="#">=</a>
-  
-  
-  
+  <input class="button white" id="btn" type="submit" value="=" onclick="operar()">
 </div>
+
+<!--</form>!--> 
 </body>
 </html>
