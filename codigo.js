@@ -2,30 +2,31 @@ function operar()
 {
 var n =  document.getElementById("lcd");
 var s = String(n.value);
-var num1 = 0;
+var valor = 0;
+var num1 = "";
 var num2 = 0;
 var resul = 0;
 for (i=0; i<n.value.length; i++)
 {
-	num1 = s.substring(i,i+1);
-	if(num1 == '+')
+	valor = s.substring(i,i+1);
+	if(valor == '+')
 	   {
 	   i++;
 	   num2 = s.substring(i,i+1);
-       resul = (num1 + num2 );
+       resul = (parseInt(num1)+parseInt(num2));
 	   
 	   }
-	else if(num1 == '-')
+	else if(valor == '-')
 	   {
 	   i++;
 	   num2 = s.substring(i,i+1);
        resul -= parseInt(num2);
 	   }
 	   else{
-		   num1 += num1;
+		   num1 += valor;
 	   }
 }
-  alert(resul);
+  n.value = resul;
 }
 
 var enc = false;
