@@ -10,7 +10,7 @@
 
 <body>
 <!--<form method="post" name="formu" id="formu" onsubmit="return operar()">!-->
-<div align="center">
+<div align="center" style="margin-bottom:50px;">
 
 <input type="text" id="lcd" class="nameField" value="" onkeyup="" disabled="true">
 
@@ -41,7 +41,7 @@
     
     <input type="button" class="button white" onclick="ce()" value="CE" >
         <input type="button" class="button white" onclick="c()" value="C" >
-  <a class="button white" href="#">RAIZ</a>
+  <input type="button" class="button white" onclick="funciones(3)" value="Raiz" >
   <a class="button white" href="#">POTENCIA</a>
   <br />
   <br />
@@ -54,8 +54,112 @@
   <br />
   
   <input class="button white" id="btn" type="submit" value="=" onclick="operar()">
+  <br><br>Graficadora de funciones:<br>
+  <input class="button white" id="btn_p1" type="submit" value="x" onclick="graficar(1)">
+    <input class="button white" id="btn_p2" type="submit" value="x²" onclick="graficar(2)">
+      <input class="button white" id="btn_p3" type="submit" value="x³" onclick="graficar(3)">
+        <input class="button white" id="btn_p4" type="submit" value="x^4" onclick="graficar(4)">
+        <input class="button white" id="btn_p5" type="submit" value="x^5" onclick="graficar(5)">
+        
+        <br><br>Funciones Trigonometricas:<br>
+         <input class="button white" id="btn_p1" type="submit" value="Sen x" onclick="gr_fun_trig( 'sen' )">
+    <input class="button white" id="btn_p2" type="submit" value="Cos x" onclick="gr_fun_trig( 'cos' )">
+      <input class="button white" id="btn_p3" type="submit" value="Tan x" onclick="gr_fun_trig( 'tan' )">
+
+  
 </div>
 
 <!--</form>!--> 
+<center>
+  <canvas id="holaCanvas" width="800px" height="400px" style="border:1px solid black;">
+  </canvas>
+</center>
+<script>
+function gr_fun_trig( fun )
+{
+	var c = document.getElementById("holaCanvas");
+  var dibujar = c.getContext("2d");
+  
+  c.width=c.width;
+  
+  //cxt.moveTo(215,430);
+  //cxt.lineTo(215,0);
+  dibujar.moveTo(400, 0);
+  dibujar.lineTo(400, 800);
+  dibujar.lineTo(400, 200);
+  
+  dibujar.lineTo(0, 200);
+  dibujar.lineTo(800, 200);
+  
+  for(i = 0; i<600; i+=30){
+  //cordenadas negativos X
+   dibujar.moveTo(400-i, 205);
+   dibujar.lineTo(400-i, 195);
+   
+   //cordenadas positivos X
+   dibujar.moveTo(400+i, 205);
+   dibujar.lineTo(400+i, 195);
+   
+   //cordenadas negativos Y
+   dibujar.moveTo(405, 200+i);
+   dibujar.lineTo(395, 200+i);
+   
+   //cordenadas positivos Y
+   dibujar.moveTo(405, 200-i);
+   dibujar.lineTo(395, 200-i);
+   
+   if(i > 0){	
+	dibujar.fillText('-'+i,400-(i+8), 215);
+	dibujar.fillText(i,400+(i-8), 215);
+	
+	dibujar.fillText('-'+i,410, 200+i+2);
+	dibujar.fillText(i,410, 200-i+2);
+   }
+   
+  }
+dibujar.font = "bold 14px sans-serif";
+dibujar.fillText("GRAFICA DE LA FUNCION",20,50);
+ //cxt.lineTo(0, 200);
+ 
+ dibujar.moveTo(400, 200);
+ mxd = 400;
+ myd = 208;
+ 
+ mxi = 400;
+ myi = 208;
+ 
+
+ for (x = 0; x<400; x++){
+	if(fun == 'sen')
+     	y = Math.sin(x)
+	else if(fun == 'cos')
+     	y = Math.cos(x)
+	else if(fun == 'tan')
+     	y = Math.tan(x)
+
+		
+	p=x;
+	t = y*9; 
+	//Grafico lado derecho
+	mxd += p;
+	myd -= t;
+
+    dibujar.moveTo(mxd, myd);
+	dibujar.lineTo(mxd-p, myd+t);
+	
+    //Grafico lado Izquierdo
+	mxi -= p;
+	myi -= t;
+
+    dibujar.moveTo(mxi, myi);
+	dibujar.lineTo(mxi+p, myi+t);
+	
+    
+ }
+ 
+  dibujar.stroke();
+}
+</script>
+
 </body>
 </html>
