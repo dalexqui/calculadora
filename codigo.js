@@ -135,7 +135,7 @@ function graficar( e )
  dibujar.fillText("GRAFICA DE LA FUNCION",25,50);
  
  dibujar.moveTo(400, 200);
- mxd = 400;
+ mxd = 400
  myd = 200;
  
  mxi = 400;
@@ -147,8 +147,40 @@ function graficar( e )
  mxad = 400;
  myad = 200;
 
- for (x = 0; x<400; x++){
-	y = Math.pow(x,e);
+x=0;
+graficaNeg = false;
+graficaPos = false;
+ while (!graficaNeg || !graficaPos){
+	
+	y = eval(Math.pow(x,e));
+	if(!graficaNeg){
+	p=x*10;
+	mxd += p;
+	
+	myd -= y;
+
+    dibujar.moveTo(mxd, myd);
+	dibujar.lineTo(mxd-p, myd+y);
+	x--;
+	if(x == -20){
+	   graficaNeg = true;
+	   x = 0;
+	}
+	}
+	
+	else {
+	p=x*10;
+	//Grafico lado derecho
+	mxi += p;
+	myi -= y;
+    dibujar.moveTo(mxi, myi);
+	dibujar.lineTo(mxi-p, myi+y);
+	x++;
+	if(x == 20)
+	   graficaPos = true;
+	}
+	
+	/*y = Math.pow(x,e);
 	p=x;
 	//Grafico lado derecho
 	mxd += p;
@@ -176,7 +208,7 @@ function graficar( e )
 	myad += y;
 
     dibujar.moveTo(mxad, myad);
-	dibujar.lineTo(mxad-p, myad-y);
+	dibujar.lineTo(mxad-p, myad-y);*/
     
  }
  
